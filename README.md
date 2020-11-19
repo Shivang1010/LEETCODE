@@ -1,4 +1,4 @@
-# LEETCODE
+# LEETCODE + ALGOEXPERT
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 1. Two Sum
@@ -46,7 +46,30 @@ def twonumbersum(array, targetsum):
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 2. Three Number Sum
+#O(n^2) time O(n) space
+def threenumbersum(array, targetsum):
+    array.sort()
+    triplets=[]
+    for i in range(len(array)-2):
+        left = i+1
+        right= len(array)-1
+        while left < right:
+            currentsum= array[i] + array[left]+ array[right]
+            if currentssum == targetsum:
+                triplets.append([array[i],array[left],array[right]})
+                left+=1
+                right-=1
+            elif currentsum < targetsum:
+                left+=1
+            elif currentsum > ttargetsum:
+                right-=1
+      return triplets
 
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+3.
 
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
