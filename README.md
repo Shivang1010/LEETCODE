@@ -105,7 +105,28 @@ def smallestdifference(arrayone, arraytwo):
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
-4. Moving Element to end
+4. Moving Element to end of the array
+(find all instances of the number and move it in the end and do it in the same array)
+
+#O(n) time, and O(1) space
+def movelementtoend (array, tomove):
+    i=0
+    j=len(array-1)
+    while i<j:
+        while i<j and array[j] = tomove:
+            j -= 1
+        if array[i] == tomove:
+            array[i], arrayj] = array[j], array[i]
+        i +=1
+    return array
+        
+    
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+5.
+
 
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
