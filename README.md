@@ -61,7 +61,7 @@ def threenumbersum(array, targetsum):
                 right-=1
             elif currentsum < targetsum:
                 left+=1
-            elif currentsum > ttargetsum:
+            elif currentsum > targetsum:
                 right-=1
       return triplets
 
@@ -69,7 +69,43 @@ def threenumbersum(array, targetsum):
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
-3.
+3.Smallest Difference
+(you are given two array of integer value and you have to find the pair of number where one number come from first array and second number come from second array and with the smallest difference in other word  find  the two closest number from both of these arrays)
+
+
+#O(nlog(n) + mlog(m)) time  and O(1) space
+def smallestdifference(arrayone, arraytwo):
+    arrayone.sort()#in interview ask the interviewer if you can sort or not
+    arraytwo.sort()#if you don't sort it will be reflected in space complexitty  if we didnt sort then there would be more space
+    idxone=0
+    idxtwo=0
+    smallest=float("inf")    #constant space
+    current= float("inf")    #constant space
+    smallestpair=[]  #constant space
+    while idxone<len(arrayone) and idxtwo < len(arraytwo):
+        firstnum=arrayone[idxone]
+        secondnum=arraytwo[idxtwo]
+        #you could have also done 
+        #current= abs(firstnum - secondnum)
+        if firstnum < secondnum:
+            current = secondnum - firstnum #then you can take out this line
+            idxone+=1
+        elif secondnum < firstnum:
+            currentnum = firstnum - secondnum # and this line will be out but we use this so its more readable
+            idxtwo +=1
+        else:
+            return[firstnum, secondnum]
+        if smallest >current:
+            smallest = current
+            smallestpair=[firstnum, secondnum]
+    return smallestpair
+
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+4. Moving Element to end
 
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
