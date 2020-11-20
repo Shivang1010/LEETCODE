@@ -125,7 +125,9 @@ def movelementtoend (array, tomove):
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
-5.
+5. Monotonic Array
+(Concept in mathemattic monotonic where the array is completely entirely non decreasing or non increasingly order
+An array is given and you have to check it is monotonic or not) 
 
 
 
