@@ -17,6 +17,9 @@ def twonumbersum(array, targetsum):
             if firstnum + secondnum == targetnum:
                 return[firstnum, secondnum]
     return[]
+
+----
+
 #O(n) time O(n) space
 def twonumbersum(array, targetsum):
     nums = {}
@@ -27,6 +30,10 @@ def twonumbersum(array, targetsum):
         else:
             nums[num] = True
     return[] 
+
+
+----
+
 #O(n log n) time O(1) space #space better than second solution but time worse #time complexity very uch better than 1st solution but not better than second solution
 def twonumbersum(array, targetsum):
     array.sort()
@@ -128,9 +135,48 @@ def movelementtoend (array, tomove):
 5. Monotonic Array
 (Concept in mathemattic monotonic where the array is completely entirely non decreasing or non increasingly order
 An array is given and you have to check it is monotonic or not) 
+ 
+#O(n) time and O(1) space 
+def ismonotonic(array):
+    if len(array)<=2:
+        return True
+    
+    direction=array[1] - array[0]
+    for i in range(2,len(array)):
+        if direction == 0:
+            direction=array[i]-array[i-1]
+            continue
+        if breaksdirection(direction,array[i-1],array[i]):
+            return False
+    return True
+    
+def breaksdirection(direction,previousint,currentint):
+    difference= currentint-previousint
+    if direcction>0:
+        return difference <0
+    return differennce>0
+
+-----
+
+#O(n) time and O(1) space
+def ismonotoic(array):
+    isnondecreasing=True
+    isnonincreasing=True
+    for i in range(1, len(array)):
+        if array[i]<array[i-1]:
+            isnondecreasing=False
+        if array[i]>array[i-1]:
+            isnonincreasing=False
+    return isnondecreasing or isnonincreasing
+
 
 
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+6.
+
 
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
